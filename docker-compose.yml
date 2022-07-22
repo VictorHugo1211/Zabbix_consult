@@ -16,8 +16,8 @@ services:
       - './zabbix/mysql:/var/lib/data'
     environment:
       - MYSQL_ROOT_PASSWORD=mudar@123
-      - MYSQL_DATABASE=loni
-      - MYSQL_USER=loni
+      - MYSQL_DATABASE=zabbix
+      - MYSQL_USER=zabbix
       - MYSQL_PASSWORD=mudar@123
 
   zabbix-server:
@@ -34,8 +34,8 @@ services:
       - './zabbix/alertscripts:/usr/lib/zabbix/alertscripts'
     environment:
       - DB_SERVER_HOST=mysql
-      - MYSQL_DATABASE=loni
-      - MYSQL_USER=loni
+      - MYSQL_DATABASE=zabbix
+      - MYSQL_USER=zabbix
       - MYSQL_PASSWORD=mudar@123
     depends_on:
       - mysql
@@ -53,8 +53,8 @@ services:
       - '443:8443'
     environment:
       - DB_SERVER_HOST=mysql
-      - MYSQL_DATABASE=loni
-      - MYSQL_USER=loni
+      - MYSQL_DATABASE=zabbix
+      - MYSQL_USER=zabbix
       - MYSQL_PASSWORD=mudar@123
       - PHP_TZ=America/Sao_Paulo
     depends_on:
